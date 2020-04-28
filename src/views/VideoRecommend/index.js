@@ -2,7 +2,7 @@
 * @Author: 王宸
 * @Date:   2020-04-14 11:55:07
 * @Last Modified by:   王宸
-* @Last Modified time: 2020-04-26 23:02:34
+* @Last Modified time: 2020-04-28 10:29:44
 */
 import React from 'react';
 import { 
@@ -84,13 +84,13 @@ class VideoRecommend extends React.Component {
         })
 
 	
-    let Authorization =  window.localStorage.getItem('Authorization')
-    if (Authorization && Authorization !== 'null') {
+    let token =  window.localStorage.getItem('Authorization')
+    if (token && token !== 'null') {
         let userPromise = axios({
 	    	method: "get",
 	    	url: "/user",
 	        headers: { 
-	            'Authorization': Authorization,
+	            'Authorization': token,
 	        },
 	    })
 	    userPromise
