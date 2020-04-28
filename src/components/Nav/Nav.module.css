@@ -1,0 +1,67 @@
+._nav ul{
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%);
+	display: inline-flex;
+}
+
+._nav ul li{
+	margin: 8px;
+	list-style: none;
+}
+
+._nav ul li span{
+	position: relative;
+	display: block;
+	padding: 10px 20px;
+	margin: 20px 0;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #262626;
+	font-weight: bold;
+	/*延迟0.5s执行这一整块代码,实现动态效果*/
+	transition: .5s;
+}
+
+._nav ul li span:hover{
+	cursor: Pointer;
+	color: #fff;
+}
+
+._nav ul li span:before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-top: 1px solid #FE9600;
+	border-bottom: 1px solid #FE9600;
+	transform: scaleY(2);
+	opacity: 0;
+	transition: .5s;
+	z-index: -1;
+}
+
+._nav ul li span:hover:before{
+	transform: scaleY(1.2);
+	opacity: 1;
+}
+
+._nav ul li span:after{
+	content: '';
+	position: absolute;
+	top: 1px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #FE9600;
+	transform: scale(0);
+	transition: .5s;
+	z-index: -1;
+}
+
+._nav ul li span:hover:after{
+	transform: scale(1);
+}

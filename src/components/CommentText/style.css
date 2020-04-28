@@ -1,0 +1,78 @@
+/*
+* @Author: 王宸
+* @Date:   2020-04-15 10:11:54
+* @Last Modified by:   王宸
+* @Last Modified time: 2020-04-15 13:49:23
+*/
+._comment ._comment_text {
+  position: relative;
+}
+
+._comment ._comment_text textarea {
+  overflow: hidden; 
+  resize:none;
+  height: 100%;
+  width: 100%;
+  color: black;
+  font-size: inherit;
+  font-family: inherit;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-bottom-color: rgb(0,0,0, 0.2)
+}
+
+._comment ._comment_text textarea:focus {
+  outline: none;
+}
+
+._comment ._comment_text textarea::placeholder {
+  color: hsla(0, 0%, 100%, 0.8);
+}
+
+._comment ._comment_text span {
+  position: absolute;
+  margin-bottom: 0px;
+  /*margin-top: 33.3%;*/
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: rgb(0,0,0, 0.6);
+  transform-origin: bottom right;
+  transform: scaleX(0);
+  transition: transform 1s ease;
+}
+
+._comment ._comment_text textarea:focus ~ span {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+
+._comment ._comment_text button {
+  z-index: 1;
+  position: relative;
+  font-size: inherit;
+  font-family: inherit;
+  color: #000;
+  padding: 0.5em 1em;
+  outline: none;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 5px 0;
+  text-transform: uppercase;
+}
+
+._comment ._comment_text button::after {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: -50%;
+  bottom: -50%;
+  width: 1.25em;
+  transform: translate3d(-525%, 0, 0) rotate(35deg);
+}
+
+._comment ._comment_text button:hover::after {
+  transition: transform 0.45s ease-in-out;
+  transform: translate3d(200%, 0, 0) rotate(35deg);
+}

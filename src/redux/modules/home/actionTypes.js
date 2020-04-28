@@ -1,0 +1,1 @@
+export const HOT_LIST_CHANGE = 'hot_list_change';

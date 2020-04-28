@@ -1,0 +1,17 @@
+@import '~antd/dist/antd.css';
+
+*{
+	padding: 0;
+	margin: 0;
+	font-family: sans-serif;
+}
+
+#root{
+	overflow-x: hidden;
+	overflow-y: auto;
+	font-family: sans-serif;
+    text-rendering: optimizeLegibility;
+    color: #333;
+    word-break: break-word;
+	/*-webkit-overflow-scrolling: touch;*/
+}

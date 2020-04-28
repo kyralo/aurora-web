@@ -1,0 +1,30 @@
+/*
+* @Author: 王宸
+* @Date:   2020-01-01 00:47:51
+* @Last Modified by:   王宸
+* @Last Modified time: 2020-04-23 20:14:34
+*/
+
+.avatar-uploader > .ant-upload {
+  width: 500px;
+  height: 350px;
+}
+
+
+.user_video_fileup{
+	width: 70%;
+	min-width: 800px;
+	min-height: 400px;
+	margin: 0 auto;
+}
+
+.user_video_fileup>div{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.user_video_fileup>div>span{
+	width: 10rem;
+}

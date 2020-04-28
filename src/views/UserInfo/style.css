@@ -1,0 +1,72 @@
+/*
+* @Author: 王宸
+* @Date:   2019-12-31 18:08:36
+* @Last Modified by:   王宸
+* @Last Modified time: 2020-04-23 20:14:47
+*/
+
+._user_avatar .ant-upload.ant-upload-select-picture-card > .ant-upload{
+    padding: 0px;
+}
+
+._user_avatar .avatar-uploader > .ant-upload {
+    width: 96px; 
+    height: 96px; 
+}
+
+.user_info{
+	position: relative;
+    padding: 2.7rem 4rem 7rem;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
+}
+
+.user_info>div{
+    display: block;
+}
+
+.user_info>div>h1{
+    font-size: 2em;
+    display: block;
+    line-height: normal;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.user_info>div>ul{
+	display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.user_info>div>ul>li{
+	list-style: none;
+	text-align: -webkit-match-parent;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+    border-top: 1px solid #f1f1f1;
+}
+
+.user_info>div>ul>li:first-child(1){
+	padding: 1rem 0;
+}
+
+
+.user_info>div>ul>li>div{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.user_info>div>ul>li>div>span{
+    width: 25rem;
+}
