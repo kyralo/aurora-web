@@ -18,8 +18,6 @@ axios.defaults.baseURL = 'http://localhost:9988/api/v2';
 // 默认请求头设置
 // axios.defaults.headers['Cache-Control'] = 'no-cache';
 
-// axios.defaults.baseURL = 'https://aurora.kyralo.online/api/v2';
-
 //http request 拦截器
 
     // let token  = window.localStorage.getItem('authorization');
