@@ -2,7 +2,7 @@
 * @Author: 王宸
 * @Date:   2020-04-14 11:55:07
 * @Last Modified by:   王宸
-* @Last Modified time: 2020-04-28 10:29:44
+* @Last Modified time: 2020-04-28 16:21:30
 */
 import React from 'react';
 import { 
@@ -97,6 +97,8 @@ class VideoRecommend extends React.Component {
 	        .then(response => {
 				const action = userInfoChange(response)
 				store.dispatch(action);
+	        }).catch( error => {
+	            window.localStorage.removeItem('Authorization')
 	        })
     }
 
