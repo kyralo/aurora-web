@@ -15,6 +15,7 @@ axios.defaults.timeout = 5000; //响应时间
 // 当实例创建时设置默认配置
 axios.defaults.baseURL = 'http://localhost:9988/api/v2';
 
+
 // 默认请求头设置
 // axios.defaults.headers['Cache-Control'] = 'no-cache';
 

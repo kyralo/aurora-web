@@ -2,7 +2,7 @@
 * @Author: 王宸
 * @Date:   2019-12-31 16:08:09
 * @Last Modified by:   王宸
-* @Last Modified time: 2020-04-30 16:48:22
+* @Last Modified time: 2020-04-30 17:31:27
 */
 import React, {
 	useState,
@@ -41,7 +41,6 @@ const Info = (props) => {
 	const [state, setState] = useState({
 		showUpdate: false,
 	    loading: false,
-	    imageUrl: ''
 	});
 
 	useEffect(() => {
@@ -117,8 +116,12 @@ const Info = (props) => {
 	}
 
 	const update = () => {
+		const newState = Object.assign({}, state, { 
+	       showUpdate: true,
+	    });
+
 		setState({
-			showUpdate: true,
+			...newState
 		});
 	}
 
@@ -126,8 +129,12 @@ const Info = (props) => {
 		let user_info = props.user_info
 		props.infoUpdate(user_info)
 		props.infoReq()
+		const newState = Object.assign({}, state, { 
+	       showUpdate: false
+	    });
+
 		setState({
-			showUpdate: false
+			...newState
 		});
 	}
 

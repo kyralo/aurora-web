@@ -2,7 +2,7 @@
 * @Author: 王宸
 * @Date:   2019-12-31 22:06:50
 * @Last Modified by:   王宸
-* @Last Modified time: 2020-04-30 16:25:56
+* @Last Modified time: 2020-04-30 17:35:03
 */
 import React, {
 	useState,
@@ -65,7 +65,10 @@ const FileUp = (props) => {
 	const handleChange = info => {
 		let status = info.file.status;
 		if (status === 'uploading') {
-		  setState({ loading: true });
+			const newState = Object.assign({}, state, { 
+		       loading: true
+		    });
+			setState({ ...newState });
 		}
 		if (status === 'done') {
 			let payload = {
@@ -75,12 +78,15 @@ const FileUp = (props) => {
 			let action = uploadChange(payload);
 			props.dispatch(action);
 
-			getBase64(info.file.originFileObj, imageUrl =>
+			getBase64(info.file.originFileObj, imageUrl => {
+				const newState = Object.assign({}, state, { 
+					imageUrl,
+					loading: false,
+			    });
 				setState({
-				  imageUrl,
-				  loading: false,
-				}),
-			);
+					...newState
+				});
+			});
 		} else if (status === 'error') {
 		  message.error(`${info.file.name} file upload failed.`);
 		}
@@ -88,9 +94,13 @@ const FileUp = (props) => {
 
 
 	const kindSelect = e => {
-	    setState({
-	      value: e.target.value,
+		const newState = Object.assign({}, state, { 
+			value: e.target.value,
 	    });
+		setState({
+			...newState
+		});
+
 		let payload = {
 			kindId: e.target.value
 		}
