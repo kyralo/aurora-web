@@ -2,7 +2,7 @@
 * @Author: 王宸
 * @Date:   2019-12-31 16:08:09
 * @Last Modified by:   王宸
-* @Last Modified time: 2020-04-30 17:31:27
+* @Last Modified time: 2020-05-15 09:29:12
 */
 import React, {
 	useState,
@@ -33,6 +33,8 @@ import {
 import axios from '@utils/axios'
 
 import store from '@redux'
+
+import { cdn } from '@constants'
 
 const { Paragraph } = Typography;
 
@@ -89,7 +91,7 @@ const Info = (props) => {
 	const avatarProps = {
 	  name: 'file',
 	  multiple: false,
-	  action: axios.defaults.baseURL+'/file_up/user/images',
+	  action: axios.defaults.baseURL+'/oss/user/images',
 	  beforeUpload: uploadBefore,
 	  headers: { 
 	  	'Cache-Control': 'no-store',
@@ -166,7 +168,7 @@ const Info = (props) => {
 			});
 
 	    	if (info.file.response !== '') {
-				let avatarUrl = axios.defaults.baseURL.substr(0, axios.defaults.baseURL.length - 6) + info.file.response
+				let avatarUrl = cdn + info.file.response
 		        let user_info = {
 		        	avatarUrl: avatarUrl
 		        }

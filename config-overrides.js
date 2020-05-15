@@ -27,6 +27,7 @@ module.exports = override(
 	    "@router": path.resolve(__dirname, 'src/router'),
 	    "@utils": path.resolve(__dirname, 'src/utils'),
 	    "@redux": path.resolve(__dirname, 'src/redux'),
+	    "@constants": path.resolve(__dirname, 'src/constants'),
 	    "@store": path.resolve(__dirname, 'src/redux/modules')
 	}),
 );

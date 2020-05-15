@@ -2,7 +2,7 @@
 * @Author: 王宸
 * @Date:   2019-12-31 22:06:50
 * @Last Modified by:   王宸
-* @Last Modified time: 2020-04-30 17:35:03
+* @Last Modified time: 2020-05-15 09:28:12
 */
 import React, {
 	useState,
@@ -25,6 +25,8 @@ import axios from '@utils/axios'
 import { videoKindChange } from '@store/video/actionCreators'
 
 import { uploadChange } from '@store/fileup/actionCreators'
+
+import { cdn } from '@constants'
 
 import './style.css'
 
@@ -72,7 +74,7 @@ const FileUp = (props) => {
 		}
 		if (status === 'done') {
 			let payload = {
-				coverUrl: axios.defaults.baseURL.substr(0, axios.defaults.baseURL.length - 6) + info.file.response
+				coverUrl: cdn + info.file.response
 			}
 
 			let action = uploadChange(payload);
@@ -183,7 +185,7 @@ const FileUp = (props) => {
 	const videoProps = {
 		  name: 'file',
 		  multiple: false,
-		  action: axios.defaults.baseURL+'/file_up/user/videos',
+		  action: axios.defaults.baseURL+'/oss/user/videos',
 		  beforeUpload: videoUploadBefore,
 		  headers: { 
 		  	'Cache-Control': 'no-store',
@@ -194,7 +196,8 @@ const FileUp = (props) => {
 				const status = info.file.status;
 			    if (status === 'done') {
 					if (info.file.response !== '') {
-						let video_url = axios.defaults.baseURL.substr(0, axios.defaults.baseURL.length - 6) + info.file.response
+						console.log(info.file.response)
+						let video_url = cdn + info.file.response
 						let payload = {
 							videoUrl: video_url 
 						}
@@ -212,7 +215,7 @@ const FileUp = (props) => {
 	const coverProps = {
 	  name: 'file',
 	  multiple: false,
-	  action: axios.defaults.baseURL+'/file_up/video/image',
+	  action: axios.defaults.baseURL+'/oss/video/image',
 	  headers: { 
 	  	'Cache-Control': 'no-store',
 		'Authorization': window.localStorage.getItem('Authorization'),
